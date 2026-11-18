@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Objava Auto Dalmacija stranice: skuplja javne datoteke u _site/ za GitHub Pages.
+
+Pokreće se automatski u GitHub Actions nakon svake promjene na grani main
+(.github/workflows/objava.yml). Lokalno za provjeru:  python3 objava.py
+"""
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, ROOT)
+os.chdir(ROOT)
+
+import objava_cms  # noqa: E402
+
+objava_cms.collect(ROOT, [
+    "index.html", "ponuda.html", "vozilo.html", "style.css", "app.js", "vozila.js",
+    "fonts", "img", "uredi.html", "cms",
+], demo_pages=("index.html", "ponuda.html"))
