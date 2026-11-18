@@ -16,4 +16,5 @@ import objava_cms  # noqa: E402
 objava_cms.collect(ROOT, [
     "index.html", "ponuda.html", "vozilo.html", "style.css", "app.js", "vozila.js",
     "fonts", "img", "uredi.html", "cms",
-], demo_pages=("index.html", "ponuda.html"))
+], demo_pages=("index.html", "ponuda.html"),
+   demo_buttons=(("uredi.html?demo&tab=vozila", "Dashboard vozila (demo)"), ("uredi.html?demo", "Uredi stranicu (demo)")))
